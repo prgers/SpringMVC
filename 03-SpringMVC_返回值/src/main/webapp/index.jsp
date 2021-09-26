@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="skill/add" method="post">
+    <form action="/skill/add" method="post">
         <div>
             名称：<input type="text" name="name">
         </div>

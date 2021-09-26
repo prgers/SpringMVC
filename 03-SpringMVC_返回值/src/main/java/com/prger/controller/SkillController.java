@@ -15,4 +15,13 @@ public class SkillController {
         skill.setId(id);
         return skill;
     }
+
+    @PostMapping("/add")
+    @ResponseBody
+    public String add(Skill skill) {
+        System.out.println(skill);
+        return "skill add success!";
+    }
+
+
 }
