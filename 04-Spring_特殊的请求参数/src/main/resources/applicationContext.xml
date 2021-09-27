@@ -6,7 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.prger"/>
-    <mvc:annotation-driven>
+
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="defaultCharset" value="UTF-8"/>
@@ -14,13 +16,18 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <mvc:default-servlet-handler/>
-
-    <mvc:view-controller path="/mv4" view-name="/jsp2.jsp"/>
-
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/page/"/>
-        <property name="suffix" value=".jsp"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSizePerFile" value="102400"/>
     </bean>
-    
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.prger.converter.DateConverter">
+                    <property name="format" value="yyyy-MM-dd"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
 </beans>

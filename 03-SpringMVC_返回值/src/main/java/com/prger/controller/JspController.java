@@ -19,4 +19,9 @@ public class JspController {
     public String jsp2(){
         return "/WEB-INF/page/jsp1.jsp";
     }
+
+    @RequestMapping("/mv3")
+    public String jsp3(){
+        return "jsp1";
+    }
 }
