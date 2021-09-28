@@ -1,6 +1,7 @@
 package com.prger.dao;
 
 import com.prger.domain.Job;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -13,6 +14,8 @@ public interface JobDao {
     boolean remove(Integer id);
     boolean update(Job job);
 
+    @Select("SELECT * FROM job")
     List<Job> list();
+    @Select("SELECT * FROM job WHERE id = #{id}")
     Job getJobById(Integer id);
 }

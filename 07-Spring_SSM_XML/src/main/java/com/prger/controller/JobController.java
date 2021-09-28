@@ -26,7 +26,7 @@ public class JobController {
 
     @GetMapping("/get/{id}")
     @ResponseBody
-    public Job getByid(@PathVariable("id") Integer id) {
+    public Job getById(@PathVariable("id") Integer id) {
         return service.getJobById(id);
     }
 

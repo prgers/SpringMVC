@@ -106,4 +106,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>ssm</finalName>
+    </build>
+
 </project>

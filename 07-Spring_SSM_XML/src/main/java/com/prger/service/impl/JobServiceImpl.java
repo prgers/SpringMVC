@@ -16,30 +16,30 @@ import java.util.List;
 public class JobServiceImpl implements JobService {
 
     @Autowired
-    private JobDao dao;
+    private JobDao jobDao;
 
     @Override
     public boolean save(Job job) {
-        return dao.save(job);
+        return jobDao.save(job);
     }
 
     @Override
     public boolean remove(Integer id) {
-        return dao.remove(id);
+        return jobDao.remove(id);
     }
 
     @Override
     public boolean update(Job job) {
-        return dao.update(job);
+        return jobDao.update(job);
     }
 
     @Override
     public List<Job> list() {
-        return dao.list();
+        return jobDao.list();
     }
 
     @Override
     public Job getJobById(Integer id) {
-        return dao.getJobById(id);
+        return jobDao.getJobById(id);
     }
 }
