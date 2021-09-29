@@ -14,16 +14,16 @@
 
 添加
 <form action="jobs/save" method="post">
-    <input type="text" name="name">
-    <input type="text" name="duty">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="duty" placeholder="duty">
     <button type="submit">添加</button>
 </form>
 
-删除
+更新
 <form action="jobs/update" method="post">
-    <input type="text" name="id">
-    <input type="text" name="name">
-    <input type="text" name="duty">
+    <input type="text" name="id" placeholder="id">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="duty" placeholder="duty">
     <button type="submit">更新</button>
 </form>
 
